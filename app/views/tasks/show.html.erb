@@ -1,0 +1,13 @@
+<h2><%= @task.title %></h2>
+<li><%= @task.details %></li>
+<li><%= @task.completed %></li>
+
+<% if @task.completed %>
+    <i class="fa fa-check-square-o"></i> This task is completed
+  <% else %>
+    <i class="fa fa-square-o"></i> This task is not completed yet
+  <% end %>
+
+<%= link_to "See all tasks", task_path %>
+<%= link_to "Edit task", edit_task_path %>
+<%= link_to "Delete task", task_path, data: { turbo_method: :delete } %>
